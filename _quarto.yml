@@ -1,0 +1,33 @@
+project:
+  type: book
+  output-dir: docs
+  execute-dir: file
+  preview:
+    port: 3430
+    browser: true
+
+date: today
+date-format: long
+
+from: markdown+emoji
+
+book:
+  title: "Accessible Statistics with Pandoc and Quarto"
+  author: "Susan Vanderplas"
+  issued: today
+  output-file: full-book
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
