@@ -67,4 +67,10 @@ Finally, we'll cover how to make that content more accessible. Despite the web a
 This will involve some solutions for e.g. writing alt-text, scripts that can check that alt-text is present, etc., as well as ways to ensure the rendered content meets most of the standard accessibility guidelines out there.
 
 
+## Tools
 
+I'm building this book using Quarto, which uses Pandoc to take a plain-text markdown file (or files, in this case) and create HTML. 
+Quarto is nice because it has a number of convenient templates, and also because it was built for literate programming - including both code and content in the same place so that the content documents the code. 
+While Quarto was designed primarily with R, Python, and Observable JavaScript in mind, it has since been extended to use many different languages. 
+You can find all of the files necessary to render this book in the [accessible-statistics](https://github.com/srvanderplas/accessible-statistics) GitHub repository. 
+Please feel free to borrow as you like - I'm creating this to help colleagues and also to record how to do some of these things in the hopes that it's useful to someone. 
