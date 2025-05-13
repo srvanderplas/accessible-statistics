@@ -1,0 +1,13 @@
+# Tools
+
+## Pandoc
+
+You can install the latest version of pandoc for your operating system by choosing the relevant executable file on the [release page](https://github.com/jgm/pandoc/releases/). 
+
+- Windows: I recommend installing pandoc using the .msi package on the [release page](https://github.com/jgm/pandoc/releases).    
+There are other options (e.g. [using Chocolatey as described on the pandoc installation instruction page](https://pandoc.org/installing.html), but if you are not a power user, I would stick with the MSI package for now.)
+
+- MacOS: I would use either Homebrew (if you already have it installed) or the [package provided on the download page](https://github.com/jgm/pandoc/releases/latest). 
+
+- Linux: Compare the version of pandoc available through your distribution's repository to the version available on GitHub - if there is a large difference (3.6.2 vs 4.0.2) then I would use the GitHub installation package specific to your system (.deb for Debian-based systems, .rpm for Red-Hat based systems). Otherwise, I would generally recommend installing via your distribution's package manager so that upgrades are performed automatically. 
+
