@@ -2,7 +2,7 @@
 
 ## So, Why Can't I Just use LaTeX?
 
-LaTeX is a fantastic typesetting system^[Really, it's more of a bunch of different systems built on top of each other in a terrifying-to-untangle behemoth of scripts and arcane tools that mostly just work. [@ChoosingLaTeXCompiler]]. 
+LaTeX is a fantastic typesetting system^[Really, it's more of a bunch of different systems built on top of each other in a terrifying-to-untangle behemoth of scripts and arcane tools that mostly just work. [@overleafChoosingLaTeXCompiler2025]]. 
 Most people seem to write a .tex file, compile it to pdf, and share the PDF file with others, but of course, you can also compile to dvi or postscript as well, if you want to. 
 Unfortunately, PDFs are not always the easiest things to make into an accessible document [@larson2MakingAccessible2023].
 LaTeX PDFs do not provide information to screen readers that allows blind or low-sight individuals to navigate through the document easily. 
