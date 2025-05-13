@@ -1,9 +1,13 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This "book" is a result of trying to become compliant with the DOJ Title II regulations [@usdepartmentofjusticeAmericansDisabilitiesAct2024], which were issued in June 2024 and mandate WCAG 2.1 accessibility for all publicly released web content by "public entities".
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+There are many nuances to this issue -- for instance, there are exceptions for practical impossibility, allowances for previously created content, and alternate methods of accessibility through e.g. different versions of content. 
+I'm not a legal expert, so I'm not going to even try to get into all of that.
 
-```{r}
-1 + 1
-```
+What I am is a statistician and programmer. 
+At times in my life, I've heavily depended on LaTeX to write mathematical content, and I also create textbooks and course materials for my students. 
+My research is in data visualization (among other things), and I've touched on accessibility in this aspect as well - it is hard to make truly "accessible" charts and graphs for all types of people and to accommodate all disabilities. 
+
+My goal here is to provide a set of templates, CSS files, and commands that will help people convert their existing mathematical content into more accessible formats that comply with the Title II guidelines, as painlessly as possible. 
+

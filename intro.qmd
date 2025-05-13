@@ -1,9 +1,70 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+## So, Why Can't I Just use LaTeX?
 
-See @knuth84 for additional discussion of literate programming.
+LaTeX is a fantastic typesetting system^[Really, it's more of a bunch of different systems built on top of each other in a terrifying-to-untangle behemoth of scripts and arcane tools that mostly just work. [@ChoosingLaTeXCompiler]]. 
+Most people seem to write a .tex file, compile it to pdf, and share the PDF file with others, but of course, you can also compile to dvi or postscript as well, if you want to. 
+Unfortunately, PDFs are not always the easiest things to make into an accessible document [@larson2MakingAccessible2023].
+LaTeX PDFs do not provide information to screen readers that allows blind or low-sight individuals to navigate through the document easily. 
+In addition, the math markup is often hard for screen readers to decode, and doesn't always end up in a place that makes sense if you're navigating through the document by keyboard. 
+You have probably tried at some point to copy text out of a PDF and into another document, and found that things just ... didn't work quite right. 
+This is a manifestation of the same fundamental issue -- the content in the PDF isn't necessarily linear or structured in a way that works when you are doing something besides just reading it. 
 
-```{r}
-1 + 1
-```
+For a number of technical reasons, it's very hard to make LaTeX accessible to a screen reader. 
+But, what if we could keep some of the benefits of LaTeX (equations, focusing on the content of the document rather than the formatting, etc.) and also get accessibility?
+
+Enter pandoc.
+Pandoc's philosophy is basically to be the universal translator of document formats. 
+In theory, pandoc can convert a word document to a web page to a LaTeX file, using the same commands. 
+It focuses on preserving the content and the structure of the document (e.g. section headings, nesting, bulleted lists) but doesn't care as much about the specific rendering - the margins, font, text color, etc.
+In this way, pandoc is preserving precisely the information that matters if you're using a screen reader. 
+This focus makes it an ideal tool for the job of creating accessible materials - it preserves only the essential content and strips away the visual "fluff". 
+
+Pandoc supports LaTeX, but it also supports Word and HTML. 
+It typically uses MathJax or MathML to render equations in HTML, but these libraries support the same syntax as LaTeX does for equation editing. 
+What this means is that it's actually very easy^[Ok, easier than it seems like it should be, in 90% of cases] to take a LaTeX file and get out an accessible HTML or docx file. 
+MathJax and MS Word have invested more into making their equation rendering accessible to blind, low-vision, and screen reader users, so this allows us to use technologies that are by default more accessible than LaTeX PDFs, without sacrificing anything beyond perhaps the use of Overleaf or TexStudio. 
+
+## Key Components of Accessible Documents
+
+What makes a document accessible? 
+If we take a simplistic view and focus on the text and content, rather than how it is rendered, then there are a few things that are important: the metadata about the document, how the content of the document is structured, and how the content is packaged within that structure.
+
+
+Document metadata includes things like the title, author, and date of the document, and perhaps a short summary of the contents/topic of the document as well. 
+It can also include the accessibility features of the document - does it contain audio? Alt-text? [@w3communitygroupreportUserExperienceGuide2021]
+
+Using a screen reader has been compared to looking at a web page through a straw - you can "see" only a tiny fraction of the content at any given time. 
+It is important to provide basic information to help someone using a screen reader decide whether to continue exploring a document, or whether they should move on to something else. 
+This also has advantages for sighted users -- that same metadata helps improve file search on desktop computers or on the internet. 
+As with many things, simple accessibility improvements benefit more than just the users we typically think about accommodating.
+
+
+1. Metadata
+  - Title
+  - Author
+  - Publication Date
+  - Short summary of contents/topic
+  - Accessibility features (alt-text, audio), hazards, and access modes (text, visual)    
+  These features are often more important when working with a format that isn't always text based (like a PDF, which can have images, text, or both, as well as embedded files). When creating documents which are primarily text, accessibility features may be left off. 
+  
+2. Document structure - the chapters, sections, and parts which make up the contents of the document. This is helpful for everyone, but is very important for screen reader users because the structure helps with navigating within the document via keyboard.
+
+3. Contents    
+The contents of a document - the text, pictures, and so on which are contained within the document's structure, also have an impact on accessibility. Pictures should have alternate descriptions (alt-text) so that if the picture cannot be loaded or viewed the user can still follow along with the document. Ideally, alt-text would completely describe the image, but this is not always possible.
+
+
+## Getting Started
+
+I'm going to assume that like me, you may have used LaTeX before (perhaps extensively). 
+So, I'm going to work from the assumption that you're familiar with creating content in a text document (like a .tex file) and then compiling that document to get a finished version.
+
+We'll start by getting the tools set up - Pandoc, and if you also happen to use R, python, or another programming language, you may also want to install Quarto. You don't have to decide now. 
+
+Then, we'll talk about how to convert old content into markdown.
+
+Finally, we'll cover how to make that content more accessible. Despite the web accessibility guidelines, there is no way to make anything 100% accessible to everyone -- even the guidelines are written to address a specific set of common problems, and someone out there is probably hampered by having larger text or icons. 
+This will involve some solutions for e.g. writing alt-text, scripts that can check that alt-text is present, etc., as well as ways to ensure the rendered content meets most of the standard accessibility guidelines out there.
+
+
+
